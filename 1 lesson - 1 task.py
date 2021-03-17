@@ -6,7 +6,7 @@ elif 60 < number < 3600:
    minute=number//60
    second=number-(60*minute)
    print(f"{minute} minutes, {second} seconds")
-elif number > 3600:
+elif number >= 3600:
    hour = number // 3600
    minute = ((number-(hour*3600))//60)
    second = (number-(hour*3600))-(minute*60)
