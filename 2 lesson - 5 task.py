@@ -24,7 +24,7 @@ for price_d in price:
 price_down.sort(reverse=True)
 print(price_down)
 
-for five in price[0:5]:
+for five in price[-5::]:
     text_out_down += f"{five} "
 
 print(text_out_down)
