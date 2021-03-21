@@ -15,8 +15,13 @@ for number in price:
 
 print(text_out)
 
+before_sort = id(price)
 price.sort()
 print(price)
+after_sort = id(price)
+
+if before_sort == after_sort:
+    print("Объект остался тот же")
 
 for price_d in price:
     price_down.append(price_d)
