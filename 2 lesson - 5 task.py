@@ -1,0 +1,35 @@
+price = [57.8, 46.51, 97, 33, 1, 18.8, 99.9, 199.9, 88, 77, 88.8, 33.9, 55.7, 0.99]
+price_down = []
+text_out = ""
+text_out_down = ""
+
+for number in price:
+    if type(number) == int:
+        text_out += f"{number} руб 00 коп, "
+    elif type(number) == float:
+        rub = str(number).split(".")[0]
+        kop = str(number).split(".")[1]
+        if len(kop) == 1:
+            kop = f"0{kop}"
+        text_out += f"{rub} руб {kop} коп, "
+
+print(text_out)
+
+before_sort = id(price)
+price.sort()
+print(price)
+after_sort = id(price)
+
+if before_sort == after_sort:
+    print("Объект остался тот же")
+
+for price_d in price:
+    price_down.append(price_d)
+
+price_down.sort(reverse=True)
+print(price_down)
+
+for five in price[-5::]:
+    text_out_down += f"{five} "
+
+print(text_out_down)
