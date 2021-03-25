@@ -1,7 +1,7 @@
-def thesaurus_adv(*arg):
+def thesaurus_adv(*args):
     dict = {}
     dict_sort = {}
-    for full_name in arg:
+    for full_name in args:
         key_last_name = full_name.split(" ")[1][:1]
         key_first_name = full_name.split(" ")[0][:1]
         if key_last_name in dict:
