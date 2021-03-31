@@ -7,20 +7,14 @@ def currency_rates(currency_code):
     response = get(current_rates_site)
     encodings = utils.get_encoding_from_headers(response.headers)
     content = response.content.decode(encoding=encodings)
-    word_list_tmp = ""
-    for symbol in content:
-        if symbol == "<":
-            word_list_tmp += f"'{symbol}"
-        elif symbol == ">":
-            word_list_tmp += f"{symbol}'"
-        else:
-            word_list_tmp += symbol
-    tmp_list = word_list_tmp.split("'")
-    for n in range(len(tmp_list)):
-        if tmp_list[n] == "<CharCode>":
-            charcode = tmp_list[n + 1]
-        elif tmp_list[n] == "<Value>":
-            value = tmp_list[n + 1]
+    word_list_tmp = content.replace("<", "'").replace(">", "'").split("'")
+    n = 0
+    for word in word_list_tmp:
+        n += 1
+        if word == "CharCode":
+            charcode = (word_list_tmp[n])
+        elif word == "Value":
+            value = word_list_tmp[n]
             current_rates.update({charcode: value})
     currency_code = currency_code.upper()
     if current_rates.get(currency_code) == None:
