@@ -13,4 +13,4 @@
         elif word == "Value":
             value = word_list_tmp[n]
             current_rates.update({charcode: value})
-Немного уменьшить год
+Немного уменьшить код
