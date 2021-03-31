@@ -2,3 +2,15 @@
 
 сделал все отдельными файлами, там надо в float выводить, а если с датой то уже str
 По мне так надо больше конкреики в дом задание... некоторые вещи расплывчиты... 
+
+Немного подумав, можно сделать вот так:
+  word_list_tmp = content.replace("<","'").replace(">","'").split("'")
+    n = 0
+    for word in word_list_tmp:
+        n += 1
+        if word == "CharCode":
+            charcode = (word_list_tmp[n])
+        elif word == "Value":
+            value = word_list_tmp[n]
+            current_rates.update({charcode: value})
+Немного уменьшить год
