@@ -8,10 +8,7 @@ for _ in nums_generator(15):
     print(_)
 
 
-def nums_generator2(max_num):
-    return (x for x in range(1, max_num + 1, 2))
-
-
-print(type(nums_generator2(15)))
-for _ in nums_generator2(15):
+g = (x for x in range(1, 15 + 1, 2))
+print(type(g))
+for _ in g:
     print(_)
