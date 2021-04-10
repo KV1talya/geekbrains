@@ -10,9 +10,11 @@ hobby = []
 
 for users_list in users_file.read().replace(",", " ").split("\n"):
     users.append(users_list)
+users_file.close()
 
 for hobby_list in hobby_file.read().split("\n"):
     hobby.append(hobby_list)
+hobby_file.close()
 
 if len(users) > len(hobby):
     for index in range(len(users)):
@@ -26,4 +28,4 @@ elif len(users) < len(hobby):
 print(result)
 for data in result:
     result_file.write(f"{data}: {result.get(data)}\n")
-
+result_file.close()
