@@ -21,7 +21,6 @@ class TownCar(Car):
     speed = 61
     color = 'red'
     name = 'Toyota'
-    is_police = False
 
     def show_speed(self):
         if self.speed > 60:
@@ -32,14 +31,12 @@ class SportCar(Car):
     speed = 100
     color = 'Red'
     name = 'Bugatti'
-    is_police = False
 
 
 class WorkCar(Car):
     speed = 45
     color = 'Мокрый асфальт'
     name = 'Ваз'
-    is_police = False
 
     def show_speed(self):
         if self.speed > 40:
@@ -58,6 +55,7 @@ town.go()
 town.show_speed()
 town.turn("лево")
 town.stop()
+print(town.is_police)
 
 sport = SportCar()
 sport.go()
