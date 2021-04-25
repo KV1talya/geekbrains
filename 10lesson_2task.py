@@ -18,7 +18,7 @@ class Textile:
 class Coat(Textile):
     def __init__(self, width, height):
         super().__init__(width, height)
-        self.square_c = round(self.get_coat_square())
+        self.square_c = self.get_coat_square()
 
     def __str__(self):
         return f'Площадь, требуемая для пальто {self.square_c}'
@@ -27,7 +27,7 @@ class Coat(Textile):
 class Jacket(Textile):
     def __init__(self, width, height):
         super().__init__(width, height)
-        self.square_j = round(self.get_jacket_square())
+        self.square_j = self.get_jacket_square()
 
     def __str__(self):
         return f'Площадь, требуемая на костюм {self.square_j}'
